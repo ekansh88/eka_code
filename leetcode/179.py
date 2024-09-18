@@ -7,15 +7,22 @@ class Solution:
         nums = list(map(str, nums))
 
         def cmp(a,b):
-            return int(a+b) > int(b+a)
+            return int(a+b) < int(b+a)
 
-        for _ in range(N):
-            for i in range(N-1):
-                a, b = nums[i], nums[i+1]        
-                if cmp(a,b)==0:
-                    nums[i], nums[i+1] = nums[i+1], nums[i]
+        nums = sorted(nums, key=cmp_to_key(cmp))
         
         res = "".join(nums)
         if int(res)==0:
             return "0"
         return res
+    
+
+    def anotherApproach(self, nums):
+        nums = list(map(str, nums))
+        nums.sort(key=lambda x: x * 10, reverse=True)
+        
+        res = "".join(nums)
+        if int(res)==0:
+            return "0"
+        return res
+
