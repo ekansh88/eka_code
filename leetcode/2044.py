@@ -1,3 +1,9 @@
+# 2044. Count Number of Maximum Bitwise-OR Subsets
+# TC: O(2**N)
+# SC: O(2**N)
+# LC Link: https://leetcode.com/problems/count-number-of-maximum-bitwise-or-subsets/description/
+# YT Link: https://www.youtube.com/@eka_code
+
 class Solution:
     def countMaxOrSubsets(self, nums: List[int]) -> int:
         # i have to find the ferq of the max bitwise OR of the subset
